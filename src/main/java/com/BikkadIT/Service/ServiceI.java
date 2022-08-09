@@ -22,7 +22,7 @@ public interface ServiceI {
 	
 	public List<Employee> updateMultipleEmp(List<Employee> employee);
 	
-	public Employee deleteEmpById(Integer id);
+	public boolean deleteEmpById(int id);
 	
 	public void deleteMultipleEmp();
 

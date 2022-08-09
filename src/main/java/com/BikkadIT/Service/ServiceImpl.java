@@ -77,15 +77,19 @@ public class ServiceImpl implements ServiceI {
 	}
 
 	@Override
-	public Employee deleteEmpById(Integer id) {
-		empRepo.deleteById(id);
-		return null;
+	public boolean deleteEmpById(int  id ) {
+		boolean existsById = empRepo.existsById(id);
+		if(existsById) {
+			empRepo.deleteById(id);
+			return true;
+		}
+		return false;
 	}
 
 	@Override
 	public void deleteMultipleEmp() {
-		// TODO Auto-generated method stub
-
+		
+		empRepo.deleteAll();
 	}
 
 }
